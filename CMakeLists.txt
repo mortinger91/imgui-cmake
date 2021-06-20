@@ -42,6 +42,8 @@ add_library(
 		imgui_demo.cpp
 		imgui_widgets.cpp
 
+		imgui_tables.cpp
+
 		imstb_rectpack.h
 		imstb_textedit.h
 		imstb_truetype.h
@@ -65,6 +67,8 @@ target_include_directories(
 		PUBLIC
 		$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
 		$<INSTALL_INTERFACE:include>
+		"../glew-cmake/include"
+		"../glfw/include"
 
 		INTERFACE
 
