@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 # Global configs
 #set(CMAKE_DEBUG_POSTFIX "")
 
+set(DEFINITIONS)
+list(APPEND DEFINITIONS -DGLEW_NO_GLU -DIMGUI_IMPL_OPENGL_LOADER_GLEW)
+
 # CMake options
 option(BUILD_SHARED_LIBS "Build shared." OFF)
 option(IMGUI_BUILD_EXAMPLES "Build examples" OFF)
@@ -74,6 +77,8 @@ target_include_directories(
 
 		PRIVATE
 )
+
+target_compile_definitions(${IMGUI_TARGET_NAME} PUBLIC ${DEFINITIONS})
 
 if (IMGUI_BUILD_EXAMPLES)
 	add_subdirectory(examples)
