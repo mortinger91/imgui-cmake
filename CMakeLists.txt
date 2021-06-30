@@ -70,8 +70,9 @@ target_include_directories(
 		PUBLIC
 		$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
 		$<INSTALL_INTERFACE:include>
-		"../glew-cmake/include"
-		"../glfw/include"
+
+		${CMAKE_SOURCE_DIR}/vendor/glfw/include
+		${CMAKE_SOURCE_DIR}/vendor/glew-cmake/include
 
 		INTERFACE
 
